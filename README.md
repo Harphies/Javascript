@@ -1,1 +1,1 @@
-# A curated list of all my full stack resources
+# A curated list of all my server side projects

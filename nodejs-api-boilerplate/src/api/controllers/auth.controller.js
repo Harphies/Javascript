@@ -1,21 +1,21 @@
-const httpStatus = require('http-status');
-const User = require('../models/user.model');
-const RefreshToken = require('../models/refreshToken.model');
-const PasswordResetToken = require('../models/passwordResetToken.model');
-const moment = require('moment-timezone');
-const { jwtExpirationInterval } = require('../../config/vars');
-const { omit } = require('lodash');
-const APIError = require('../utils/APIError');
-const emailProvider = require('../services/emails/emailProvider');
+const httpStatus = require("http-status");
+const User = require("../models/user.model");
+const RefreshToken = require("../models/refreshToken.model");
+const PasswordResetToken = require("../models/passwordResetToken.model");
+const moment = require("moment-timezone");
+const { jwtExpirationInterval } = require("../../config/vars");
+const { omit } = require("lodash");
+const APIError = require("../utils/APIError");
+const emailProvider = require("../services/emails/emailProvider");
 
 /**
  * Returns a formated object with tokens
  * @private
  */
 function generateTokenResponse(user, accessToken) {
-  const tokenType = 'Bearer';
+  const tokenType = "Bearer";
   const refreshToken = RefreshToken.generate(user).token;
-  const expiresIn = moment().add(jwtExpirationInterval, 'minutes');
+  const expiresIn = moment().add(jwtExpirationInterval, "minutes");
   return {
     tokenType,
     accessToken,
@@ -30,7 +30,7 @@ function generateTokenResponse(user, accessToken) {
  */
 exports.register = async (req, res, next) => {
   try {
-    const userData = omit(req.body, 'role');
+    const userData = omit(req.body, "role");
     const user = await new User(userData).save();
     const userTransformed = user.transform();
     const token = generateTokenResponse(user, user.token());
@@ -84,7 +84,10 @@ exports.refresh = async (req, res, next) => {
       userEmail: email,
       token: refreshToken,
     });
-    const { user, accessToken } = await User.findAndGenerateToken({ email, refreshObject });
+    const { user, accessToken } = await User.findAndGenerateToken({
+      email,
+      refreshObject,
+    });
     const response = generateTokenResponse(user, accessToken);
     return res.json(response);
   } catch (error) {
@@ -101,11 +104,11 @@ exports.sendPasswordReset = async (req, res, next) => {
       const passwordResetObj = await PasswordResetToken.generate(user);
       emailProvider.sendPasswordReset(passwordResetObj);
       res.status(httpStatus.OK);
-      return res.json('success');
+      return res.json("success");
     }
     throw new APIError({
       status: httpStatus.UNAUTHORIZED,
-      message: 'No account found with that email',
+      message: "No account found with that email",
     });
   } catch (error) {
     return next(error);
@@ -125,21 +128,23 @@ exports.resetPassword = async (req, res, next) => {
       isPublic: true,
     };
     if (!resetTokenObject) {
-      err.message = 'Cannot find matching reset token';
+      err.message = "Cannot find matching reset token";
       throw new APIError(err);
     }
     if (moment().isAfter(resetTokenObject.expires)) {
-      err.message = 'Reset token is expired';
+      err.message = "Reset token is expired";
       throw new APIError(err);
     }
 
-    const user = await User.findOne({ email: resetTokenObject.userEmail }).exec();
+    const user = await User.findOne({
+      email: resetTokenObject.userEmail,
+    }).exec();
     user.password = password;
     await user.save();
     emailProvider.sendPasswordChangeEmail(user);
 
     res.status(httpStatus.OK);
-    return res.json('Password Updated');
+    return res.json("Password Updated");
   } catch (error) {
     return next(error);
   }
