@@ -4,7 +4,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-# define th route directory
+# define the route directory
 @app.route('/')
 def home():
     return 'Hello Init App'
