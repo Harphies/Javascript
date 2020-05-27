@@ -11,8 +11,8 @@
 
 ## Tools
 
-- [OpenweatherAPI]()
-- [Axios]()
-- [hbs]()
-- [Express]()
-- [Node]{}
+- [OpenweatherAPI](https://openweathermap.org/)
+- [Axios](https://github.com/axios/axios)
+- [hbs](https://www.npmjs.com/package/hbs)
+- [Express](https://expressjs.com/en/4x/api.html)
+- [Node](https://nodejs.org/en/docs/)
