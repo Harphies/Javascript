@@ -10,8 +10,8 @@ const router = require("./router");
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/", router);
-// Connect to database
 
+// Connect to database
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
   console.log(`connected to the DB`);
 });
