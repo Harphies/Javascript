@@ -17,7 +17,7 @@
 - hashing passwords
 - Setting Up routes
 - creating private routes
-- Adding jwt to auth
+- Authentication with jwt
 - validation
 - File Upload
 
