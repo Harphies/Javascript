@@ -30,9 +30,21 @@
   - Controllers
   - Middlewares
   - erros
+  - setup the .env file to save sensitive data
+  - import/ require all the neccesary packages needed.
 
 - Connect to database
   - MongoDb
   - Firebase
   - MySQL
 - Requirements
+  - Login
+  - Signup/ Register
+  - Validation
+  - Authentication
+- Deploy/ Dockerize
+  - Heroku
+  - AWS
+  - GCP
+  - Azure
+- Test
