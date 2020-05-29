@@ -17,8 +17,9 @@
 - hashing passwords
 - Setting Up routes
 - creating private routes
-- Addin jwt to auth
+- Adding jwt to auth
 - validation
+- File Upload
 
 ## Projects Steps
 
