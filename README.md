@@ -1,4 +1,4 @@
-# A curated list of all my server side APIs
+# A curated list of server side API Projects
 
 ---
 
