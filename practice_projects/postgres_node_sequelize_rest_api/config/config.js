@@ -1,4 +1,5 @@
-{
+const cred = 
+ {
   "development": {
     "username": "postgres",
     "password": "postgres123",
@@ -21,3 +22,5 @@
     "dialect": "mysql"
   }
 }
+
+module.exports = cred
