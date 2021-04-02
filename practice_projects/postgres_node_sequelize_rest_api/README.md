@@ -11,4 +11,6 @@ To run locally:
 ### April 1, 2021
 
 - Created app.js and created the server code
-- Created .gitignore file
+- Created .gitignore fil
+- created .sequelizerc file to create model, seeder and migration files and run `sequelize init`
+- changes the development database credentials
