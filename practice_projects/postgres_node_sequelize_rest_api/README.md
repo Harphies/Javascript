@@ -7,3 +7,8 @@ To run locally:
 - Run `npm install`
 - Run `sequelize db:migrate` Note: make sure you have sequelize cli installed globally `npm install -g sequelize-cli`
 - Run `npm start`
+
+### April 1, 2021
+
+- Created app.js and created the server code
+- Created .gitignore file
