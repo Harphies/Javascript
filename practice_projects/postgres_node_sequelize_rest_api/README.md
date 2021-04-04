@@ -16,3 +16,9 @@ To run locally:
 - changes the development database credentials
 - rename the config.json file to config.js and change the name where it's used in the model index file
 - rewrite the config.js file
+
+### April 3, 2021
+
+- created the model folder
+- define all the models and their corresponding associations using the class based approach by extending the Model base class destructed from sequelize
+-
