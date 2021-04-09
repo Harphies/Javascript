@@ -21,4 +21,14 @@ To run locally:
 
 - created the model folder
 - define all the models and their corresponding associations using the class based approach by extending the Model base class destructed from sequelize
--
+
+### April, 5, 2021
+
+- Created the controller folder.
+- Created the controller files to interact with each data model.
+- Classrom and Course CRUD created
+
+### April, 7, 2021
+
+- created the controller files
+- wrote the CRUD Operations of each object.
