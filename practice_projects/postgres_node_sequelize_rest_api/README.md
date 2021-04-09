@@ -36,3 +36,5 @@ To run locally:
 ### April, 9, 2021
 
 - created the route folder files
+- created the docker file and the docker-compose file
+- created the bin folder and the www root server connection
