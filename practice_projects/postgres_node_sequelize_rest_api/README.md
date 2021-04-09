@@ -32,3 +32,7 @@ To run locally:
 
 - created the controller files
 - wrote the CRUD Operations of each object.
+
+### April, 9, 2021
+
+- created the route folder files
