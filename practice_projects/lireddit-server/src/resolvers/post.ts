@@ -16,4 +16,5 @@ export class PostResolver {
         @Ctx() {em}: MyContext): Promise<Post | null>{
         return em.findOne(Post, {id},)
     }
+    
 }
