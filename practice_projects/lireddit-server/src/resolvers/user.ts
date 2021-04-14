@@ -23,4 +23,13 @@ export class UserResolver {
         await em.persistAndFlush(user)
         return user 
     }
+
+    @Mutation(() => User)
+    async login(
+        @Arg('options') options: UsernamePasswordInput,
+        @Ctx() {em}: MyContext
+    ) {
+        const user = await em.findOne(User, {username: options.username})
+        return user
+    }
 }
