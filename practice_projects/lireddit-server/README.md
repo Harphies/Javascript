@@ -26,7 +26,8 @@
 ### April 14, 2021
 
 - Completed the CRUD Operations
-- Created a User entity
+- Created a new entity file for User entity
+- Created a new resolver file for user CRUD Operations
 
 ## Essential Learnings
 
