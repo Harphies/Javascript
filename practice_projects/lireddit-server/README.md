@@ -29,6 +29,11 @@
 - Created a new entity file for User entity
 - Created a new resolver file for user CRUD Operations
 
+### April 17, 2021
+
+- worked on user CRUD Resolver
+  - User Login Mutation
+
 ## Essential Learnings
 
 - Stacked decorators and Decorators
