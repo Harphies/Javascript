@@ -32,7 +32,8 @@
 ### April 17, 2021
 
 - worked on user CRUD Resolver
-  - User Login Mutation
+  - Implement User Login Mutation with validation of Inputs: username and password
+  - Vaildated User registration flow and handled errors correctly.
 
 ## Essential Learnings
 
