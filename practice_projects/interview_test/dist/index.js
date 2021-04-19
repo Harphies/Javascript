@@ -26,10 +26,21 @@ const dotenv = __importStar(require("dotenv"));
 const express_1 = __importDefault(require("express"));
 const helmet_1 = __importDefault(require("helmet"));
 const cors_1 = __importDefault(require("cors"));
+const mongoose_1 = __importDefault(require("mongoose"));
+const index_1 = __importDefault(require("./routes/index"));
 dotenv.config();
 if (!process.env.PORT) {
     process.exit(1);
 }
+const uri = "mongodb+srv://oduwole:oduwole321@firedevice.kp4c8.mongodb.net/sensors?";
+mongoose_1.default.connect(uri, (err) => {
+    if (err) {
+        console.log(err.message);
+    }
+    else {
+        console.log(`connection to MongoDB`);
+    }
+});
 const PORT = parseInt(process.env.PORT, 10);
 const app = express_1.default();
 app.use(helmet_1.default());
@@ -37,5 +48,14 @@ app.use(cors_1.default());
 app.use(express_1.default.json());
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
+});
+app.use('/api', index_1.default);
+app.use((_, res, next) => {
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.header('Access-Control-Allow-Credentials', "true");
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    next();
 });
 //# sourceMappingURL=index.js.map
