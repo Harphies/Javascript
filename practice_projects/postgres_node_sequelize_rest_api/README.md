@@ -14,8 +14,8 @@ To run locally:
 - Created .gitignore fil
 - created .sequelizerc file to create model, seeder and migration files and run `sequelize init`
 - changes the development database credentials
-- rename the config.json file to config.js and change the name where it's used in the model index file
-- rewrite the config.js file
+- rename the config.json file to config.js and change the name where it's used in the model index file. export the file.
+- Note: if we created the correct use database.js directly when configuring the sequlizerc file, there is no need to rename the config.json to config.js again
 
 ### April 3, 2021
 
