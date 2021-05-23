@@ -1,0 +1,16 @@
+{
+	"name": "recipe-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "",
+		"server": "node producer-http-basic.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"fastify": "3.2.1"
+	}
+}
