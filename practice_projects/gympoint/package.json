@@ -1,0 +1,25 @@
+{
+  "name": "gympoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@sentry/node": "6.3.5",
+    "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "express-async-errors": "3.1.1",
+    "express-rate-limit": "5.2.6",
+    "helmet": "4.6.0",
+    "rate-limit-redis": "2.1.0",
+    "youch": "2.2.1"
+  },
+  "dependencies": {
+    "redis": "3.1.2"
+  }
+}
