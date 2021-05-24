@@ -7,6 +7,7 @@
 Target audience is mainly developers who are tired of updating their CV's every now and then.
 
 **Live Demo ✨**
+
 - [Web version][url]
 - [PDF version][url-pdf]
 
